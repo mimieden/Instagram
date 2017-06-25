@@ -8,24 +8,37 @@
 
 import UIKit
 import ESTabBarController  //ESTabBarControllerの初期設定(4.2)
+import Firebase            //(5.6)
+import FirebaseAuth        //(5.6)
+
+class ViewController: UIViewController {
 
 //==================================================
 // 関数（ライフサイクル）
 //==================================================
-class ViewController: UIViewController {
-
+//--ViewDidLoad-------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //ESTabBarControllerのSセットアップ(4.2)
         F_SetupTab()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+//--ViewDidAplear(5.6)------------------------------
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //currentUser == nil =>ログインしていない
+        if FIRAuth.auth()?.currentUser == nil {
+            //ログイン画面を呼び出す
+            //viewDidAppear内でpresent()を呼び出しても表示されないためメソッドが終了してから呼ばれるようにする
+            DispatchQueue.main.async {
+                let l_LoginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+                self.present(l_LoginViewController!, animated: true, completion: nil)
+            }
+        }
+    }
+
 //==================================================
 // 関数（その他）
 //==================================================
