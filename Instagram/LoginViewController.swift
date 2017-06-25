@@ -9,6 +9,7 @@
 import UIKit
 import Firebase      //(5.7)
 import FirebaseAuth  //(5.7)
+import SVProgressHUD //(5.7)
 
 class LoginViewController: UIViewController {
 
@@ -36,10 +37,35 @@ class LoginViewController: UIViewController {
     }
 
 //==================================================
-//  関数(Action)
+//  関数(Action)(5.7)
 //==================================================
     // ログインボタンをタップしたときに呼ばれるメソッド
     @IBAction func A_HandleLoginButton(_ sender: Any) {
+        if let l_Adress = O_MailAddressTextField.text, let l_password = O_PasswordTextField.text {
+            //アドレスとパスワード名のいずれかでも入力されていない時は何もしない
+            if l_Adress.characters.isEmpty || l_password.characters.isEmpty {
+                return
+            }
+            
+            //HUDで処理中を表示
+            SVProgressHUD.show()
+            
+            FIRAuth.auth()?.signIn(withEmail: l_Adress, password: l_password) { user, error in
+                if let l_Error = error {
+                    print("DEBUG_PRINT:" + l_Error.localizedDescription)
+                    return
+                } else {
+                    print("DEBUG_PRINT: ログインに成功しました")
+                    
+                    //HUDを消す
+                    SVProgressHUD.dismiss()
+                    
+                    //画面を閉じてViewControllerに戻る
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }
+            }
+        }
     }
     
     // アカウント作成ボタンをタップしたときに呼ばれるメソッド
@@ -50,6 +76,10 @@ class LoginViewController: UIViewController {
                 print("DEBUG_PRINT: 何かが空文字です。")
                 return
             }
+            
+            //HUDで処理中を表示
+            SVProgressHUD.show()
+            
             //アドレス/パスワードでユーザー作成し、作成に成功すると自動的にログインする
             FIRAuth.auth()?.createUser(withEmail: l_Adress, password: l_password) { user, error in
                 if let l_Error = error {
@@ -70,6 +100,9 @@ class LoginViewController: UIViewController {
                             print("DEBUG_PRINT: " + l_Error.localizedDescription)
                         }
                         print("DEBUG_PRINT: [displayName = \(l_User.displayName!)]の設定に成功しました。")
+                        
+                        //HUDを消す
+                        SVProgressHUD.dismiss()
                         
                         //画面を閉じてViewControllerに戻る
                         self.dismiss(animated: true, completion: nil)
