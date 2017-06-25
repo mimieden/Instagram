@@ -90,7 +90,7 @@ class LoginViewController: UIViewController {
             
                 print("DEBUG_PRINT: ユーザー作成に成功しました。")
        
-                //表示名を設定する
+                //表示名を設定する ??テキストではif let user = user その後のuserは何を使う？
                 let l_UserC = FIRAuth.auth()?.currentUser
                 if let l_User = l_UserC {
                     let l_ChangeRequest = l_User.profileChangeRequest()
