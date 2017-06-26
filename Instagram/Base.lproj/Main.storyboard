@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -197,12 +198,62 @@
                     <view key="view" contentMode="scaleToFill" id="IgE-Go-GH9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="O_ImageView" translatesAutoresizingMaskIntoConstraints="NO" id="Clh-Xd-ICh">
+                                <rect key="frame" x="16" y="40" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="fPB-ib-yNX"/>
+                                    <constraint firstAttribute="width" constant="120" id="w6E-fl-y2q"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="O_TextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="キャプション" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lWh-lb-Hfq">
+                                <rect key="frame" x="146" y="130" width="213" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tYn-PQ-gdu">
+                                <rect key="frame" x="37.5" y="180" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="x20-G2-uZV"/>
+                                </constraints>
+                                <state key="normal" title="投稿" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="A_HandlePostButton:" destination="tQM-BU-Hcc" eventType="touchUpInside" id="fEZ-GB-pBs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rb9-qJ-0Em">
+                                <rect key="frame" x="37.5" y="230" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="lgW-WJ-hZE"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="A_HandleCancelButton:" destination="tQM-BU-Hcc" eventType="touchUpInside" id="Bwb-PN-aDu"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lWh-lb-Hfq" secondAttribute="trailing" id="2cv-Tz-6eW"/>
+                            <constraint firstItem="Rb9-qJ-0Em" firstAttribute="centerX" secondItem="IgE-Go-GH9" secondAttribute="centerX" id="CFv-aF-fnk"/>
+                            <constraint firstItem="Clh-Xd-ICh" firstAttribute="top" secondItem="2Qm-ga-KzN" secondAttribute="bottom" constant="20" id="EZl-WL-Liy"/>
+                            <constraint firstItem="tYn-PQ-gdu" firstAttribute="top" secondItem="lWh-lb-Hfq" secondAttribute="bottom" constant="20" id="MWS-Z8-a6F"/>
+                            <constraint firstItem="Rb9-qJ-0Em" firstAttribute="top" secondItem="tYn-PQ-gdu" secondAttribute="bottom" constant="10" id="Qcn-dE-cGP"/>
+                            <constraint firstItem="Clh-Xd-ICh" firstAttribute="leading" secondItem="IgE-Go-GH9" secondAttribute="leadingMargin" id="Y6A-wJ-9hG"/>
+                            <constraint firstItem="tYn-PQ-gdu" firstAttribute="centerX" secondItem="IgE-Go-GH9" secondAttribute="centerX" id="aAQ-N8-TCN"/>
+                            <constraint firstItem="lWh-lb-Hfq" firstAttribute="leading" secondItem="Clh-Xd-ICh" secondAttribute="trailing" constant="10" id="pt5-N3-DOL"/>
+                            <constraint firstItem="lWh-lb-Hfq" firstAttribute="bottom" secondItem="Clh-Xd-ICh" secondAttribute="bottom" id="sFU-Iv-g6d"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="O_ImageView" destination="Clh-Xd-ICh" id="uWG-kh-uWv"/>
+                        <outlet property="O_TextField" destination="lWh-lb-Hfq" id="fkv-sA-R0C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Uj-fY-c1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2671" y="123"/>
+            <point key="canvasLocation" x="2669.5999999999999" y="122.78860569715144"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="gmD-Br-qHM">
@@ -216,7 +267,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="表示名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JKK-7r-zOV">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="O_DisplayNameTextField" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="表示名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JKK-7r-zOV">
                                 <rect key="frame" x="37.5" y="100" width="300" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="ZpF-7i-C0v"/>

@@ -67,7 +67,7 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
             DispatchQueue.main.async {
                 // AdobeImageEditorを起動する
                 let l_AdobeViewController = AdobeUXImageEditorViewController(image: l_Image)
-                l_AdobeViewController.delegate = self
+                l_AdobeViewController.delegate = self as! AdobeUXImageEditorViewControllerDelegate
                 self.present(l_AdobeViewController, animated: true, completion:  nil)
             }
         }
