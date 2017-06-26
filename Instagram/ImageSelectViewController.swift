@@ -67,7 +67,7 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
             DispatchQueue.main.async {
                 // AdobeImageEditorを起動する
                 let l_AdobeViewController = AdobeUXImageEditorViewController(image: l_Image)
-                l_AdobeViewController.delegate = self as! AdobeUXImageEditorViewControllerDelegate
+                l_AdobeViewController.delegate = self as? AdobeUXImageEditorViewControllerDelegate
                 self.present(l_AdobeViewController, animated: true, completion:  nil)
             }
         }
@@ -88,7 +88,7 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
         
         // 投稿の画面を開く
         let l_PostViewController = self.storyboard?.instantiateViewController(withIdentifier: "Post") as! PostViewController
-        l_PostViewController.image = image
+        l_PostViewController.V_Image = image
         present(l_PostViewController, animated: true, completion: nil)
     }
     
@@ -97,8 +97,6 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
         // 加工画面を閉じる
         editor.dismiss(animated: true, completion: nil)
     }
-    
-    
     
     /*
     // MARK: - Navigation

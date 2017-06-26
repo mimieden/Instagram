@@ -43,10 +43,33 @@ class PostViewController: UIViewController {
 //==================================================
 //  関数(Action)(8.1)
 //==================================================
+//--投稿ボタンをタップしたときに呼ばれるメソッド-------------
     @IBAction func A_HandlePostButton(_ sender: Any) {
+        
+        // ImageViewから画像を取得する
+        let l_ImageData = UIImageJPEGRepresentation(O_ImageView.image!, 0.5)
+        let l_ImageString = l_ImageData!.base64EncodedString(options: .lineLength64Characters)
+        
+        // postDataに必要な情報を取得しておく
+        let l_Time = NSDate.timeIntervalSinceReferenceDate
+        let l_Name = FIRAuth.auth()?.currentUser?.displayName
+        
+        // 辞書を作成してFirebaseに保存する
+        let l_PostRef = FIRDatabase.database().reference().child(Const.SL_PostPath)
+        let l_PostData = ["caption": O_TextField.text!, "image": l_ImageString, "time": String(l_Time), "name": l_Name!]
+        l_PostRef.childByAutoId().setValue(l_PostData)
+        
+        // HUDで投稿完了を表示する
+        SVProgressHUD.showSuccess(withStatus: "投稿しました")
+        
+        // 全てのモーダルを閉じる
+        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
     }
     
+//--キャンセルボタンをタップしたときに呼ばれるメソッド--------
     @IBAction func A_HandleCancelButton(_ sender: Any) {
+        // 画面を閉じる
+        dismiss(animated: true, completion: nil)
     }
 
     /*

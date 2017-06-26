@@ -17,6 +17,7 @@
 		1D12E03A1EFFE05300DB6142 /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12E0391EFFE05300DB6142 /* ImageSelectViewController.swift */; };
 		1D12E03C1EFFE06000DB6142 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12E03B1EFFE06000DB6142 /* PostViewController.swift */; };
 		1D12E03E1EFFE06D00DB6142 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12E03D1EFFE06D00DB6142 /* SettingViewController.swift */; };
+		1D791DD51F01541E0063CF80 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D791DD41F01541E0063CF80 /* Const.swift */; };
 		1D8043751EFFF56500A87E2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D8043741EFFF56500A87E2A /* GoogleService-Info.plist */; };
 		1D8FA76B1F01399900CE4DE2 /* AdobeCreativeSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8FA7671F01395A00CE4DE2 /* AdobeCreativeSDKCore.framework */; };
 		1D8FA76C1F01399900CE4DE2 /* AdobeCreativeSDKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D8FA7671F01395A00CE4DE2 /* AdobeCreativeSDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -64,6 +65,7 @@
 		1D12E0391EFFE05300DB6142 /* ImageSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
 		1D12E03B1EFFE06000DB6142 /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		1D12E03D1EFFE06D00DB6142 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		1D791DD41F01541E0063CF80 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		1D8043741EFFF56500A87E2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1D8FA7671F01395A00CE4DE2 /* AdobeCreativeSDKCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdobeCreativeSDKCore.framework; sourceTree = "<group>"; };
 		1D8FA7681F01395A00CE4DE2 /* AdobeCreativeSDKImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AdobeCreativeSDKImage.framework; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				1D12E03B1EFFE06000DB6142 /* PostViewController.swift */,
 				1D12E03D1EFFE06D00DB6142 /* SettingViewController.swift */,
 				1D8043741EFFF56500A87E2A /* GoogleService-Info.plist */,
+				1D791DD41F01541E0063CF80 /* Const.swift */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				1D12E03A1EFFE05300DB6142 /* ImageSelectViewController.swift in Sources */,
 				1D12E0261EFFDD8600DB6142 /* ViewController.swift in Sources */,
 				1D12E0241EFFDD8600DB6142 /* AppDelegate.swift in Sources */,
+				1D791DD51F01541E0063CF80 /* Const.swift in Sources */,
 				1D12E03E1EFFE06D00DB6142 /* SettingViewController.swift in Sources */,
 				1D12E0381EFFE04300DB6142 /* HomeViewController.swift in Sources */,
 			);
