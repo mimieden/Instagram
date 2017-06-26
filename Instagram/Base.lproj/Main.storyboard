@@ -131,7 +131,7 @@
         <!--Image Select View Controller-->
         <scene sceneID="rUg-6z-guT">
             <objects>
-                <viewController storyboardIdentifier="ImageSelect" id="okm-vO-kex" customClass="ImageSelectViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ImageSelect" id="okm-vO-kex" customClass="ImageSelectViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9hv-pu-pvQ"/>
                         <viewControllerLayoutGuide type="bottom" id="xcM-EY-aME"/>

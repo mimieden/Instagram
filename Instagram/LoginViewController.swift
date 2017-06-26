@@ -44,6 +44,7 @@ class LoginViewController: UIViewController {
         if let l_Adress = O_MailAddressTextField.text, let l_password = O_PasswordTextField.text {
             //アドレスとパスワード名のいずれかでも入力されていない時は何もしない
             if l_Adress.characters.isEmpty || l_password.characters.isEmpty {
+                SVProgressHUD.showError(withStatus: "必要項目を入力して下さい")  //(5.7)
                 return
             }
             
@@ -53,6 +54,7 @@ class LoginViewController: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: l_Adress, password: l_password) { user, error in
                 if let l_Error = error {
                     print("DEBUG_PRINT:" + l_Error.localizedDescription)
+                    SVProgressHUD.showError(withStatus: "サインインに失敗しました。")  //(5.7)
                     return
                 } else {
                     print("DEBUG_PRINT: ログインに成功しました")
@@ -74,6 +76,7 @@ class LoginViewController: UIViewController {
             //アドレス/パスワード/表示名のいずれでも入力されていないときは何もしない
             if l_Adress.characters.isEmpty || l_password.characters.isEmpty || l_DisplayName.characters.isEmpty {
                 print("DEBUG_PRINT: 何かが空文字です。")
+                SVProgressHUD.showError(withStatus: "必要項目を入力して下さい")
                 return
             }
             
@@ -85,6 +88,7 @@ class LoginViewController: UIViewController {
                 if let l_Error = error {
                     //エラーがあったら原因をprintしreturnすることで以降の処理を実行せずに処理を終了する@
                     print("DEBUG_PRINT:" + l_Error.localizedDescription)
+                    SVProgressHUD.showError(withStatus: "ユーザー作成に失敗しました。")
                     return
                 }
             
@@ -98,6 +102,7 @@ class LoginViewController: UIViewController {
                     l_ChangeRequest.commitChanges { error in
                         if let l_Error = error {
                             print("DEBUG_PRINT: " + l_Error.localizedDescription)
+                            SVProgressHUD.showError(withStatus: "ユーザー作成時にエラーが発生しました。")
                         }
                         print("DEBUG_PRINT: [displayName = \(l_User.displayName!)]の設定に成功しました。")
                         
