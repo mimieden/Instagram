@@ -62,6 +62,14 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
             let l_Image = info[UIImagePickerControllerOriginalImage] as! UIImage
             
             // あとでAdobeUXImageEditorを起動する
+            // AdobeUXImageEditorで、受け取ったimageを加工できる
+            // ここでpresentViewControllerを呼び出しても表示されないためメソッドが終了してから呼ばれるようにする
+            DispatchQueue.main.async {
+                // AdobeImageEditorを起動する
+                let l_AdobeViewController = AdobeUXImageEditorViewController(image: l_Image)
+                l_AdobeViewController.delegate = self
+                self.present(l_AdobeViewController, animated: true, completion:  nil)
+            }
         }
         
         // 閉じる
@@ -72,6 +80,26 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
         // 閉じる
         picker.dismiss(animated: true, completion: nil)
     }
+    
+    // AdobeImageEditorで加工が終わったときに呼ばれるメソッド(7.4)
+    func photoEditor(_ editor: AdobeUXImageEditorViewController, finishedWith image: UIImage?) {
+        // 画像加工画面を閉じる
+        editor.dismiss(animated: true, completion: nil)
+        
+        // 投稿の画面を開く
+        let l_PostViewController = self.storyboard?.instantiateViewController(withIdentifier: "Post") as! PostViewController
+        l_PostViewController.image = image
+        present(l_PostViewController, animated: true, completion: nil)
+    }
+    
+    // AdobeImageEditorで加工をキャンセルしたときに呼ばれる(7.4)
+    func photoEditorCanceled(_ editor: AdobeUXImageEditorViewController) {
+        // 加工画面を閉じる
+        editor.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     /*
     // MARK: - Navigation
 
