@@ -139,7 +139,47 @@
                     <view key="view" contentMode="scaleToFill" id="L1D-Yb-dgO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgK-pe-jvU">
+                                <rect key="frame" x="37.5" y="80" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="V73-eS-QDx"/>
+                                </constraints>
+                                <state key="normal" title="ライブラリ" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="A_HandleLibraryButton:" destination="okm-vO-kex" eventType="touchUpInside" id="p1A-iu-fiQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sV-h2-izv">
+                                <rect key="frame" x="37.5" y="130" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="x9e-7J-vPy"/>
+                                </constraints>
+                                <state key="normal" title="カメラ" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="A_HandleCameraButton:" destination="okm-vO-kex" eventType="touchUpInside" id="UCK-XP-aAp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4an-QR-Fjj">
+                                <rect key="frame" x="37.5" y="180" width="300" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="v9v-of-lRs"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル" backgroundImage="btn"/>
+                                <connections>
+                                    <action selector="A_HandleCancelButton:" destination="okm-vO-kex" eventType="touchUpInside" id="fC2-LB-RXy"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UgK-pe-jvU" firstAttribute="top" secondItem="9hv-pu-pvQ" secondAttribute="bottom" constant="60" id="1it-2l-cad"/>
+                            <constraint firstItem="6sV-h2-izv" firstAttribute="top" secondItem="UgK-pe-jvU" secondAttribute="bottom" constant="10" id="EIp-fz-xAX"/>
+                            <constraint firstItem="UgK-pe-jvU" firstAttribute="centerX" secondItem="L1D-Yb-dgO" secondAttribute="centerX" id="FEC-U9-JcD"/>
+                            <constraint firstItem="6sV-h2-izv" firstAttribute="centerX" secondItem="L1D-Yb-dgO" secondAttribute="centerX" id="L3s-Xi-ihK"/>
+                            <constraint firstItem="4an-QR-Fjj" firstAttribute="centerX" secondItem="L1D-Yb-dgO" secondAttribute="centerX" id="cpk-f8-hwq"/>
+                            <constraint firstItem="4an-QR-Fjj" firstAttribute="top" secondItem="6sV-h2-izv" secondAttribute="bottom" constant="10" id="j3I-hQ-5bV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bac-9r-Fta" userLabel="First Responder" sceneMemberID="firstResponder"/>
