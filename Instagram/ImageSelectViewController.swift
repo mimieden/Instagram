@@ -8,8 +8,8 @@
 
 import UIKit
 
-//デリゲート追加(6.2)
-class ImageSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
+//デリゲート追加(6.2)(7.4)
+class ImageSelectViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, AdobeUXImageEditorViewControllerDelegate  {
 //==================================================
 //  関数(ライフサイクル)
 //==================================================
@@ -67,7 +67,7 @@ class ImageSelectViewController: UIViewController, UIImagePickerControllerDelega
             DispatchQueue.main.async {
                 // AdobeImageEditorを起動する
                 let l_AdobeViewController = AdobeUXImageEditorViewController(image: l_Image)
-                l_AdobeViewController.delegate = self as? AdobeUXImageEditorViewControllerDelegate
+                l_AdobeViewController.delegate = self
                 self.present(l_AdobeViewController, animated: true, completion:  nil)
             }
         }
