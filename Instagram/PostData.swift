@@ -21,6 +21,8 @@ class PostData: NSObject {
     var V_IsLiked: Bool = false
     
     init(snapshot: FIRDataSnapshot, myID: String) {
+        self.V_Id = snapshot.key
+        
         let l_ValueDictionary = snapshot.value as! [String: AnyObject]
         
         V_ImageString = l_ValueDictionary["image"] as? String
