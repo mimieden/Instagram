@@ -18,6 +18,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var O_LikeLabel: UILabel!
     @IBOutlet weak var O_DateLabel: UILabel!
     @IBOutlet weak var O_CaptionLabel: UILabel!
+    @IBOutlet weak var O_CommentButton: UIButton!  //(課題)
    
 //==================================================
 // 関数

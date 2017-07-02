@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D02A53C1F08ED3E00F18167 /* PostCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D02A53B1F08ED3E00F18167 /* PostCommentViewController.swift */; };
 		1D12E0241EFFDD8600DB6142 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12E0231EFFDD8600DB6142 /* AppDelegate.swift */; };
 		1D12E0261EFFDD8600DB6142 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D12E0251EFFDD8600DB6142 /* ViewController.swift */; };
 		1D12E0291EFFDD8700DB6142 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D12E0271EFFDD8700DB6142 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D02A53B1F08ED3E00F18167 /* PostCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCommentViewController.swift; sourceTree = "<group>"; };
 		1D12E0201EFFDD8600DB6142 /* Instagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D12E0231EFFDD8600DB6142 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D12E0251EFFDD8600DB6142 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -167,15 +169,16 @@
 				1D12E02C1EFFDD8700DB6142 /* LaunchScreen.storyboard */,
 				1D12E02F1EFFDD8700DB6142 /* Info.plist */,
 				1D12E0351EFFE00B00DB6142 /* LoginViewController.swift */,
-				1D12E0371EFFE04300DB6142 /* HomeViewController.swift */,
 				1DE636991F0241B700244175 /* PostData.swift */,
 				1D12E0391EFFE05300DB6142 /* ImageSelectViewController.swift */,
-				1DE6369B1F024F1D00244175 /* PostTableViewCell.swift */,
-				1DE6369C1F024F1D00244175 /* PostTableViewCell.xib */,
+				1D12E0371EFFE04300DB6142 /* HomeViewController.swift */,
 				1D12E03B1EFFE06000DB6142 /* PostViewController.swift */,
+				1D02A53B1F08ED3E00F18167 /* PostCommentViewController.swift */,
 				1D12E03D1EFFE06D00DB6142 /* SettingViewController.swift */,
 				1D8043741EFFF56500A87E2A /* GoogleService-Info.plist */,
 				1D791DD41F01541E0063CF80 /* Const.swift */,
+				1DE6369B1F024F1D00244175 /* PostTableViewCell.swift */,
+				1DE6369C1F024F1D00244175 /* PostTableViewCell.xib */,
 			);
 			path = Instagram;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				1D12E0361EFFE00B00DB6142 /* LoginViewController.swift in Sources */,
 				1D12E03A1EFFE05300DB6142 /* ImageSelectViewController.swift in Sources */,
 				1D12E0261EFFDD8600DB6142 /* ViewController.swift in Sources */,
+				1D02A53C1F08ED3E00F18167 /* PostCommentViewController.swift in Sources */,
 				1D12E0241EFFDD8600DB6142 /* AppDelegate.swift in Sources */,
 				1D791DD51F01541E0063CF80 /* Const.swift in Sources */,
 				1DE6369D1F024F1D00244175 /* PostTableViewCell.swift in Sources */,

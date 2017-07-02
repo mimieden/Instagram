@@ -14,7 +14,7 @@ import FirebaseDatabase
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate  {
     
     @IBOutlet weak var O_TableView: UITableView!
-    
+    var V_Image: UIImage!
     var V_PostArray: [PostData] = []
     
     //FIRDatabaseのobserveEventの登録状態を表す
@@ -120,7 +120,31 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // セル内のボタンのアクションをソースコードで設定する
         l_Cell.O_LikeButton.addTarget(self, action:#selector(handleButton(sender:event:)), for:  UIControlEvents.touchUpInside)
         
+        // コメントボタンのアクションを設定する(課題)
+        l_Cell.O_CommentButton.addTarget(self, action:#selector(handleComment(sender:event:)), for:  UIControlEvents.touchUpInside)
+        
         return l_Cell
+    }
+    
+    
+    // コメントボタンがタップされた時に呼ばれるメソッド(課題)
+    func handleComment(sender: UIButton, event:UIEvent) {
+        print("DEBUG_PRINT: Commentボタンがタップされました。")
+        
+        // タップされたセルのインデックスを求める
+        let l_Touch = event.allTouches?.first
+        let l_Point = l_Touch!.location(in: self.O_TableView)
+        let l_IndexPath = O_TableView.indexPathForRow(at: l_Point)
+        
+        // 配列からタップされたインデックスのデータを取り出す
+        let l_PostData = V_PostArray[l_IndexPath!.row]
+        
+        // 画像をセット
+        V_Image = l_PostData.V_Image
+
+        //ボタンが押されたらPostCommentViewControllerをモーダルで表示する(課題)
+        let l_PostCommentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment")
+        self.present(l_PostCommentViewController!, animated: true, completion: nil)
     }
     
     // セル内のボタンがタップされた時に呼ばれるメソッド
