@@ -14,7 +14,7 @@ class PostCommentViewController: UIViewController {
 // グローバル変数/定数(課題)
 //==================================================
 //--(8.2)-------------------------------------------
-    var V_Image: UIImage!
+    //bvar V_Image: UIImage!
     
 //--Outlet(RestrationIDもセット!)(課題)---------------
     @IBOutlet weak var O_ImageView: UIImageView!
@@ -27,7 +27,7 @@ class PostCommentViewController: UIViewController {
         super.viewDidLoad()
         
         //受け取った画像をImageViewに設定する(8.2)
-        O_ImageView.image = V_Image
+        //O_ImageView.image = V_Image
     }
 
     override func didReceiveMemoryWarning() {

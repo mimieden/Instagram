@@ -143,8 +143,9 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
         V_Image = l_PostData.V_Image
 
         //ボタンが押されたらPostCommentViewControllerをモーダルで表示する(課題)
-        let l_PostCommentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment")
-        self.present(l_PostCommentViewController!, animated: true, completion: nil)
+        let l_PostCommentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment") as! PostCommentViewController
+        l_PostCommentViewController.O_ImageView.image = V_Image
+        self.present(l_PostCommentViewController, animated: true, completion: nil)
     }
     
     // セル内のボタンがタップされた時に呼ばれるメソッド
