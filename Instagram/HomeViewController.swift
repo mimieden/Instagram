@@ -144,7 +144,8 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         //ボタンが押されたらPostCommentViewControllerをモーダルで表示する(課題)
         let l_PostCommentViewController = self.storyboard?.instantiateViewController(withIdentifier: "Comment") as? PostCommentViewController
-        l_PostCommentViewController?.O_ImageView.image = V_Image
+        l_PostCommentViewController?.V_Image = V_Image
+        l_PostCommentViewController?.V_PostData = l_PostData
         self.present(l_PostCommentViewController!, animated: true, completion: nil)
     }
     

@@ -19,6 +19,9 @@ class PostData: NSObject {
     var V_Date: NSDate?
     var V_Likes: [String] = []
     var V_IsLiked: Bool = false
+    var V_Comment: [String] = []      //(課題)
+    var V_CommentName: [String] = []  //(課題)
+    var V_CommentId: [String] = []    //(課題)
     
     init(snapshot: FIRDataSnapshot, myID: String) {
         self.V_Id = snapshot.key
@@ -37,6 +40,18 @@ class PostData: NSObject {
         
         if let l_Likes = l_ValueDictionary["likes"] as? [String] {
             self.V_Likes = l_Likes
+        }
+        
+        if let l_Comment = l_ValueDictionary["comment"] as? [String] {          //(課題)
+            self.V_Comment = l_Comment
+        }
+        
+        if let l_CommentName = l_ValueDictionary["commentname"] as? [String] {  //(課題)
+            self.V_CommentName = l_CommentName
+        }
+        
+        if let l_CommentId = l_ValueDictionary["commentid"] as? [String] {  //(課題)
+            self.V_CommentId = l_CommentId
         }
         
         for V_IsLiked in self.V_Likes {

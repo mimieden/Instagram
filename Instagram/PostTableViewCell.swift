@@ -57,6 +57,5 @@ class PostTableViewCell: UITableViewCell {
             self.O_LikeButton.setImage(l_buttonImage, for: UIControlState.normal)
         }
     }
-    
 }
 

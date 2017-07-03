@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
+import SVProgressHUD
 
 class PostCommentViewController: UIViewController {
 
@@ -14,7 +18,8 @@ class PostCommentViewController: UIViewController {
 // グローバル変数/定数(課題)
 //==================================================
 //--(8.2)-------------------------------------------
-    //bvar V_Image: UIImage!
+    var V_Image: UIImage!
+    var V_PostData: PostData!
     
 //--Outlet(RestrationIDもセット!)(課題)---------------
     @IBOutlet weak var O_ImageView: UIImageView!
@@ -26,8 +31,8 @@ class PostCommentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //受け取った画像をImageViewに設定する(8.2)
-        //O_ImageView.image = V_Image
+        //画像をImageViewに設定する(8.2)
+        O_ImageView.image = V_Image
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,25 +46,43 @@ class PostCommentViewController: UIViewController {
 //--投稿ボタンをタップしたときに呼ばれるメソッド-------------
     @IBAction func A_PostComment(_ sender: Any) {
         
-        // ImageViewから画像を取得する
-        //let l_ImageData = UIImageJPEGRepresentation(O_ImageView.image!, 0.5)
-        //let l_ImageString = l_ImageData!.base64EncodedString(options: .lineLength64Characters)
+        // 画像のインデックスを求める
+        //let l_Touch = event.allTouches?.first
+        //let l_Point = l_Touch!.location(in: self.O_TableView)
+        //let l_IndexPath = O_TableView.indexPathForRow(at: l_Point)
         
-        // postDataに必要な情報を取得しておく
-        //let l_Time = NSDate.timeIntervalSinceReferenceDate
-        //let l_Name = FIRAuth.auth()?.currentUser?.displayName
+        // 配列からタップされたインデックスのデータを取り出す
+        //let l_PostData = V_PostArray[l_IndexPath!.row]
         
-        // 辞書を作成してFirebaseに保存する
-        //let l_PostRef = FIRDatabase.database().reference().child(Const.SL_PostPath)
-        //let l_PostData = ["caption": O_TextField.text!, "image": l_ImageString, "time": String(l_Time), "name": l_Name!]
-        //l_PostRef.childByAutoId().setValue(l_PostData)
-        
-        // HUDで投稿完了を表示する
-        //SVProgressHUD.showSuccess(withStatus: "投稿しました")
-        
-        // 全てのモーダルを閉じる
-        //UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+        //Firebaseに保存するデータの準備
+        if (O_Comment.text?.isEmpty)! {               //コメント未記入の時は保存しない
+            // HUDで未記入を通知する
+            SVProgressHUD.showSuccess(withStatus: "コメントが記入されていません")
+        } else {                          //コメントが入っていた場合 V_PostDataにデータが入っている
+            
+            V_PostData.V_Comment.append(O_Comment.text!)
 
+            let l_Name = FIRAuth.auth()?.currentUser?.displayName
+            V_PostData.V_CommentName.append(l_Name!)
+            
+            let uid = FIRAuth.auth()?.currentUser?.uid
+            V_PostData.V_CommentId.append(uid!)
+            
+            // 増えたComment/CommentName/CommentIdをFirebaseに保存する
+            let l_PostRef = FIRDatabase.database().reference().child(Const.SL_PostPath).child(V_PostData.V_Id!)
+            let l_Comment = ["comment": V_PostData.V_Comment]
+            let l_CommentName = ["commentname": V_PostData.V_CommentName]
+            let l_CommentId = ["commentid": V_PostData.V_CommentId]
+            l_PostRef.updateChildValues(l_Comment)
+            l_PostRef.updateChildValues(l_CommentName)
+            l_PostRef.updateChildValues(l_CommentId)
+            
+            // HUDで投稿完了を表示する
+            SVProgressHUD.showSuccess(withStatus: "投稿しました")
+            
+            // 全てのモーダルを閉じる
+            UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+        }
     }
     
 //--キャンセルボタンをタップしたときに呼ばれるメソッド--------
@@ -68,15 +91,4 @@ class PostCommentViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
