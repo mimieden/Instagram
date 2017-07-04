@@ -20,6 +20,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var O_CaptionLabel: UILabel!
     @IBOutlet weak var O_CommentButton: UIButton!  //(課題)
     @IBOutlet weak var O_CommentLabel: UILabel!    //(課題)
+    @IBOutlet weak var O_CommentNumber: UILabel!
     
     //==================================================
     // 関数
@@ -41,7 +42,7 @@ class PostTableViewCell: UITableViewCell {
         
         self.O_CaptionLabel.text = "\(postData.V_Name!) : \(postData.V_Caption!)"
         let l_likeNumber = postData.V_Likes.count
-        O_LikeLabel.text = "\(l_likeNumber)"
+        O_LikeLabel.text = "いいね \(l_likeNumber)件"
         
         let l_formatter = DateFormatter()
         l_formatter.locale = NSLocale(localeIdentifier: "ja_JP") as Locale!
@@ -60,6 +61,8 @@ class PostTableViewCell: UITableViewCell {
 //--------コメント表示(課題)ここから----------------
         O_CommentLabel?.text = ""                             //コメント欄(表示)を一度クリアする
         let l_CommentNumber = postData.V_Comment.count        //コメント数(DB)を取得する
+        
+        O_CommentNumber.text = "コメント \(l_CommentNumber)件"        //コメント数を表示
         
         //コメント数(DB)が0の場合
         if l_CommentNumber == 0 {

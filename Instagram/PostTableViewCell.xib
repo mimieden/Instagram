@@ -35,67 +35,80 @@
                         <state key="normal" title="Button" image="like_none"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="O_LikeLabel" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAG-jz-BPJ">
-                        <rect key="frame" x="68" y="604" width="40" height="21"/>
+                        <rect key="frame" x="18" y="644" width="80" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="u1Q-T0-TWF"/>
+                            <constraint firstAttribute="width" constant="80" id="u1Q-T0-TWF"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="O_DateLabel" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O02-Rf-9R9">
-                        <rect key="frame" x="118" y="604" width="446" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="O_CaptionLabel" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ0-EL-420">
-                        <rect key="frame" x="10" y="644" width="562" height="20.5"/>
+                        <rect key="frame" x="522" y="594" width="42" height="40"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f9B-D5-Xsl">
-                        <rect key="frame" x="118" y="594" width="40" height="40"/>
+                        <rect key="frame" x="108" y="594" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="Rke-O8-VfT"/>
                             <constraint firstAttribute="width" constant="40" id="uDK-lM-bLe"/>
                         </constraints>
-                        <state key="normal" title="Button" image="Comment_none"/>
+                        <state key="normal" title="Button" image="Commnet"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1f-EH-90P">
-                        <rect key="frame" x="10" y="739" width="562" height="21"/>
+                        <rect key="frame" x="18" y="812" width="546" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="O_CommentNumber" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry4-Tl-8bS">
+                        <rect key="frame" x="108" y="644" width="120" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="LsB-Hc-FMY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="O_CaptionLabel" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ0-EL-420">
+                        <rect key="frame" x="18" y="675" width="546" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="hAG-jz-BPJ" firstAttribute="leading" secondItem="Lkg-mL-Pv0" secondAttribute="trailing" constant="10" id="1qN-1G-Dd6"/>
                     <constraint firstItem="Lkg-mL-Pv0" firstAttribute="top" secondItem="WM9-MS-yP8" secondAttribute="bottom" constant="10" id="6bX-B4-eXb"/>
                     <constraint firstItem="Lkg-mL-Pv0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="6y2-h9-ddw"/>
-                    <constraint firstItem="O02-Rf-9R9" firstAttribute="leading" secondItem="hAG-jz-BPJ" secondAttribute="trailing" constant="10" id="8I6-e7-8XO"/>
                     <constraint firstItem="WM9-MS-yP8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="B7T-GS-Id1"/>
-                    <constraint firstItem="hAG-jz-BPJ" firstAttribute="centerY" secondItem="Lkg-mL-Pv0" secondAttribute="centerY" id="DHe-7F-887"/>
-                    <constraint firstItem="f9B-D5-Xsl" firstAttribute="top" secondItem="WM9-MS-yP8" secondAttribute="bottom" constant="10" id="Ds8-mS-EMI"/>
-                    <constraint firstAttribute="trailing" secondItem="f1f-EH-90P" secondAttribute="trailing" constant="10" id="Eh1-OT-y81"/>
-                    <constraint firstItem="f1f-EH-90P" firstAttribute="top" secondItem="WZ0-EL-420" secondAttribute="bottom" constant="10" id="J9a-Gh-3jO"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="WZ0-EL-420" secondAttribute="trailing" constant="10" id="E2d-w2-uv2"/>
+                    <constraint firstItem="WZ0-EL-420" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="G2S-Gg-eu3"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="f1f-EH-90P" secondAttribute="bottom" constant="10" id="I6T-2u-fr1"/>
+                    <constraint firstItem="O02-Rf-9R9" firstAttribute="centerY" secondItem="Lkg-mL-Pv0" secondAttribute="centerY" id="IdQ-tv-kb1"/>
+                    <constraint firstItem="f9B-D5-Xsl" firstAttribute="top" secondItem="WM9-MS-yP8" secondAttribute="bottom" constant="10" id="KQR-5f-TM9"/>
+                    <constraint firstItem="f1f-EH-90P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="KbX-Wv-azj"/>
                     <constraint firstItem="WM9-MS-yP8" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Oem-4b-X7Z"/>
-                    <constraint firstItem="f1f-EH-90P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VRc-3G-0uo"/>
+                    <constraint firstItem="ry4-Tl-8bS" firstAttribute="leading" secondItem="hAG-jz-BPJ" secondAttribute="trailing" constant="10" id="PG6-jF-y4A"/>
+                    <constraint firstItem="f1f-EH-90P" firstAttribute="top" secondItem="WZ0-EL-420" secondAttribute="bottom" constant="10" id="PGf-In-D9M"/>
+                    <constraint firstItem="O02-Rf-9R9" firstAttribute="top" secondItem="WM9-MS-yP8" secondAttribute="bottom" constant="10" id="SN6-Y5-seK"/>
                     <constraint firstItem="WM9-MS-yP8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Ynn-dN-aSm"/>
-                    <constraint firstItem="WZ0-EL-420" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ZBi-0u-8fx"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="O02-Rf-9R9" secondAttribute="trailing" constant="10" id="dxB-4a-QBQ"/>
-                    <constraint firstAttribute="trailing" secondItem="WZ0-EL-420" secondAttribute="trailing" constant="10" id="eHP-Ci-K3v"/>
-                    <constraint firstItem="WZ0-EL-420" firstAttribute="top" secondItem="Lkg-mL-Pv0" secondAttribute="bottom" constant="10" id="eeM-aK-ZbI"/>
-                    <constraint firstItem="O02-Rf-9R9" firstAttribute="centerY" secondItem="Lkg-mL-Pv0" secondAttribute="centerY" id="g4e-MA-ECl"/>
-                    <constraint firstItem="f9B-D5-Xsl" firstAttribute="leading" secondItem="hAG-jz-BPJ" secondAttribute="trailing" constant="10" id="qSh-ip-qnF"/>
-                    <constraint firstAttribute="bottom" secondItem="f1f-EH-90P" secondAttribute="bottom" constant="10" id="rXi-QF-KWU"/>
+                    <constraint firstItem="WZ0-EL-420" firstAttribute="top" secondItem="ry4-Tl-8bS" secondAttribute="bottom" constant="10" id="fW4-6f-1Ug"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="f1f-EH-90P" secondAttribute="trailing" constant="10" id="g68-Ph-tFW"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="O02-Rf-9R9" secondAttribute="trailing" constant="10" id="gYy-hl-6bc"/>
+                    <constraint firstItem="hAG-jz-BPJ" firstAttribute="top" secondItem="Lkg-mL-Pv0" secondAttribute="bottom" constant="10" id="h2o-s2-L8C"/>
+                    <constraint firstItem="ry4-Tl-8bS" firstAttribute="centerY" secondItem="hAG-jz-BPJ" secondAttribute="centerY" id="hV2-w7-NUo"/>
+                    <constraint firstItem="f9B-D5-Xsl" firstAttribute="leading" secondItem="Lkg-mL-Pv0" secondAttribute="trailing" constant="50" id="nY5-dD-pEo"/>
+                    <constraint firstItem="f9B-D5-Xsl" firstAttribute="centerY" secondItem="Lkg-mL-Pv0" secondAttribute="centerY" id="vp5-uu-kKq"/>
+                    <constraint firstItem="hAG-jz-BPJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="zmr-li-nic"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="O_CaptionLabel" destination="WZ0-EL-420" id="8fB-zO-3Ps"/>
                 <outlet property="O_CommentButton" destination="f9B-D5-Xsl" id="BUn-iB-ooC"/>
                 <outlet property="O_CommentLabel" destination="f1f-EH-90P" id="m3j-tK-aqs"/>
+                <outlet property="O_CommentNumber" destination="ry4-Tl-8bS" id="wMV-Di-5PV"/>
                 <outlet property="O_DateLabel" destination="O02-Rf-9R9" id="RNG-49-2wS"/>
                 <outlet property="O_LikeButton" destination="Lkg-mL-Pv0" id="l95-AK-0YP"/>
                 <outlet property="O_LikeLabel" destination="hAG-jz-BPJ" id="Ovs-fH-jtC"/>
@@ -105,7 +118,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Comment_none" width="40" height="40"/>
+        <image name="Commnet" width="40" height="40"/>
         <image name="like_none" width="40" height="40"/>
     </resources>
 </document>
