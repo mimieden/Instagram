@@ -49,7 +49,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="O_CaptionLabel" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ0-EL-420">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" restorationIdentifier="O_CaptionLabel" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZ0-EL-420">
                         <rect key="frame" x="10" y="644" width="562" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -63,10 +63,12 @@
                         </constraints>
                         <state key="normal" title="Button" image="Comment_none"/>
                     </button>
-                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I7b-sE-xpd">
-                        <rect key="frame" x="10" y="674.5" width="562" height="249"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </tableView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1f-EH-90P">
+                        <rect key="frame" x="10" y="739" width="562" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="hAG-jz-BPJ" firstAttribute="leading" secondItem="Lkg-mL-Pv0" secondAttribute="trailing" constant="10" id="1qN-1G-Dd6"/>
@@ -76,24 +78,24 @@
                     <constraint firstItem="WM9-MS-yP8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="B7T-GS-Id1"/>
                     <constraint firstItem="hAG-jz-BPJ" firstAttribute="centerY" secondItem="Lkg-mL-Pv0" secondAttribute="centerY" id="DHe-7F-887"/>
                     <constraint firstItem="f9B-D5-Xsl" firstAttribute="top" secondItem="WM9-MS-yP8" secondAttribute="bottom" constant="10" id="Ds8-mS-EMI"/>
-                    <constraint firstItem="I7b-sE-xpd" firstAttribute="top" secondItem="WZ0-EL-420" secondAttribute="bottom" constant="10" id="LrD-qs-zph"/>
+                    <constraint firstAttribute="trailing" secondItem="f1f-EH-90P" secondAttribute="trailing" constant="10" id="Eh1-OT-y81"/>
+                    <constraint firstItem="f1f-EH-90P" firstAttribute="top" secondItem="WZ0-EL-420" secondAttribute="bottom" constant="10" id="J9a-Gh-3jO"/>
                     <constraint firstItem="WM9-MS-yP8" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Oem-4b-X7Z"/>
+                    <constraint firstItem="f1f-EH-90P" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VRc-3G-0uo"/>
                     <constraint firstItem="WM9-MS-yP8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Ynn-dN-aSm"/>
                     <constraint firstItem="WZ0-EL-420" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="ZBi-0u-8fx"/>
-                    <constraint firstAttribute="bottom" secondItem="I7b-sE-xpd" secondAttribute="bottom" constant="10" id="d25-gI-5QZ"/>
-                    <constraint firstItem="I7b-sE-xpd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="dKp-m8-pI2"/>
                     <constraint firstAttribute="trailingMargin" secondItem="O02-Rf-9R9" secondAttribute="trailing" constant="10" id="dxB-4a-QBQ"/>
                     <constraint firstAttribute="trailing" secondItem="WZ0-EL-420" secondAttribute="trailing" constant="10" id="eHP-Ci-K3v"/>
                     <constraint firstItem="WZ0-EL-420" firstAttribute="top" secondItem="Lkg-mL-Pv0" secondAttribute="bottom" constant="10" id="eeM-aK-ZbI"/>
                     <constraint firstItem="O02-Rf-9R9" firstAttribute="centerY" secondItem="Lkg-mL-Pv0" secondAttribute="centerY" id="g4e-MA-ECl"/>
                     <constraint firstItem="f9B-D5-Xsl" firstAttribute="leading" secondItem="hAG-jz-BPJ" secondAttribute="trailing" constant="10" id="qSh-ip-qnF"/>
-                    <constraint firstItem="I7b-sE-xpd" firstAttribute="top" secondItem="WZ0-EL-420" secondAttribute="bottom" constant="10" id="s2u-Hl-KaB"/>
-                    <constraint firstAttribute="trailing" secondItem="I7b-sE-xpd" secondAttribute="trailing" constant="10" id="t4h-zI-lz9"/>
+                    <constraint firstAttribute="bottom" secondItem="f1f-EH-90P" secondAttribute="bottom" constant="10" id="rXi-QF-KWU"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="O_CaptionLabel" destination="WZ0-EL-420" id="8fB-zO-3Ps"/>
                 <outlet property="O_CommentButton" destination="f9B-D5-Xsl" id="BUn-iB-ooC"/>
+                <outlet property="O_CommentLabel" destination="f1f-EH-90P" id="m3j-tK-aqs"/>
                 <outlet property="O_DateLabel" destination="O02-Rf-9R9" id="RNG-49-2wS"/>
                 <outlet property="O_LikeButton" destination="Lkg-mL-Pv0" id="l95-AK-0YP"/>
                 <outlet property="O_LikeLabel" destination="hAG-jz-BPJ" id="Ovs-fH-jtC"/>

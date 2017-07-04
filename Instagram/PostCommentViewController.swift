@@ -46,14 +46,6 @@ class PostCommentViewController: UIViewController {
 //--投稿ボタンをタップしたときに呼ばれるメソッド-------------
     @IBAction func A_PostComment(_ sender: Any) {
         
-        // 画像のインデックスを求める
-        //let l_Touch = event.allTouches?.first
-        //let l_Point = l_Touch!.location(in: self.O_TableView)
-        //let l_IndexPath = O_TableView.indexPathForRow(at: l_Point)
-        
-        // 配列からタップされたインデックスのデータを取り出す
-        //let l_PostData = V_PostArray[l_IndexPath!.row]
-        
         //Firebaseに保存するデータの準備
         if (O_Comment.text?.isEmpty)! {               //コメント未記入の時は保存しない
             // HUDで未記入を通知する
@@ -90,5 +82,4 @@ class PostCommentViewController: UIViewController {
         // 画面を閉じる
         dismiss(animated: true, completion: nil)
     }
-    
 }
